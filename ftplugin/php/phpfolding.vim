@@ -178,6 +178,9 @@ function! s:PHPCustomFolds() " {{{
 	" Fold function with PhpDoc (function foo() {})
 	call s:PHPFoldPureBlock('function\s\+[a-z_][a-z0-9_]*\s*(', s:FOLD_WITH_PHPDOC)
 
+	" Fold abstract function with PhpDoc
+	call s:PHPFoldProperties('^\s*\(abstract\)\s\(\(private\)\|\(public\)\|\(protected\)\s\)*\(static\s\)*function\s\+[A-Za-z_][A-Za-z0-9_]*\s*(', ";", s:FOLD_WITH_PHPDOC, 1, 1)
+
 	" Fold class properties with PhpDoc (var $foo = NULL;)
 	call s:PHPFoldProperties('^\s*\(\(private\)\|\(public\)\|\(protected\)\|\(var\)\)\s\(static\s\)*\$', ";", s:FOLD_WITH_PHPDOC, 1, 1)
 
